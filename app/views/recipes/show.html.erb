@@ -11,11 +11,14 @@
 
 <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: "btn btn-success pull"%>
 	<h3><%= @recipe.summary %></h3>
+	<div class="show_recipe">
+		<%= image_tag(@recipe.picture.url, class: "gravatar") if @recipe.picture? %>
+	</div>
 	<div class="well">
 		<p>
 			<strong>Steps:</strong>
 </p>
-<ul><%=@recipe.description%></ul>
+<ul><li><%=@recipe.description%></li></ul>
 
 	</div>
 	</div>
