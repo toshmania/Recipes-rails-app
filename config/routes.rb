@@ -16,7 +16,13 @@ root 'pages#home'
    end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+   resources :chefs, except: [:new]
 
+   get '/register', to: 'chefs#new'
+
+   get '/login', to: 'logins#new'
+   post '/login', to: 'logins#create'
+   get '/logout', to: 'logins#destroy'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
